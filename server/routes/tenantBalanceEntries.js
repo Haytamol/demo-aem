@@ -24,13 +24,34 @@ router.get("/", async (req, res) => {
 });
 
 // Get balance enries by property
+// router.get("/byProperty/:propertyId", async (req, res) => {
+//   const propertyId = req.params.propertyId;
+//   console.log("Heyo baakas, propertyId", propertyId);
+//   try {
+//     const tenantEntriesForProperty = await TenantBalanceEntry.find({
+//       property: propertyId,
+//     }).sort("rentalPeriod");
+
+//     res.send(tenantEntriesForProperty);
+//   } catch (error) {
+//     console.error("Error fetching TenantBalanceEntry documents:", error);
+//     res.status(500).send("Internal Server Error");
+//   }
+// });
+// Get balance entries by property
 router.get("/byProperty/:propertyId", async (req, res) => {
   const propertyId = req.params.propertyId;
-  console.log("Heyo baakas, propertyId", propertyId);
+  console.log("Received request for propertyId:", propertyId);
+
   try {
+    // Log the database connection status
+    console.log("Database connection status:", mongoose.connection.readyState);
+
     const tenantEntriesForProperty = await TenantBalanceEntry.find({
       property: propertyId,
     }).sort("rentalPeriod");
+
+    console.log("Found entries:", tenantEntriesForProperty);
 
     res.send(tenantEntriesForProperty);
   } catch (error) {
