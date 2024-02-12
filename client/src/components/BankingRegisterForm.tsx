@@ -29,8 +29,6 @@ import debitTypes from "../data/debitTypes";
 import creditTypes from "../data/creditTypes";
 import useInvoices from "../hooks/useInvoices";
 
-const invoices = ["60641", "103LWTD1", "AEML-221M", "Test Invoice"];
-
 const schema = z.object({
   date: z.string().datetime(),
   type: z

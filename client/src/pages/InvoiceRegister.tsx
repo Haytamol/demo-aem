@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
 import PageHeader from "../components/PageHeader";
-import { initialData } from "../data/invoices";
 import InvoiceRegisterTable from "../components/tables/InvoiceRegisterTable";
 
 const InvoiceRegister = () => {
@@ -15,7 +14,6 @@ const InvoiceRegister = () => {
         buttonText="Add New Invoice"
       />
       <InvoiceRegisterTable
-        initialData={initialData}
         createRow={createRow}
         onExitCreateMode={() => setCreateRow(false)}
       />
