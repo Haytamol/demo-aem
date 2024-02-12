@@ -21,10 +21,6 @@ mongoose
 
 app.use(express.json());
 
-app.use("/", (req, res) => {
-  res.send("server is running...");
-});
-
 app.use("/api/properties", properties);
 app.use("/api/landlords", landlords);
 app.use("/api/tenants", tenants);
@@ -32,6 +28,10 @@ app.use("/api/bankingEntries", bankingEntries);
 app.use("/api/llBalanceEntries", llBalanceEntries.router);
 app.use("/api/tenantBalanceEntries", tenantBalanceEntries.router);
 app.use("/api/invoices", invoices.router);
+
+app.use("/", (req, res) => {
+  res.send("server is running...");
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
