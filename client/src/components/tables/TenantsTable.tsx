@@ -18,7 +18,6 @@ import { intializeTenantColumns } from "../columns/tenantsColumns";
 import { defaultTableSettings } from "./tableSettings";
 
 interface Props {
-  initialData: Tenant[];
   createRow: boolean;
   onExitCreateMode: () => void;
 }

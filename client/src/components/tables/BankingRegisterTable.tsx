@@ -19,7 +19,6 @@ import { intializeBankingColumns } from "../columns/bankingColumns";
 import { defaultTableSettings } from "./tableSettings";
 
 interface Props {
-  initialData: BankingEntry[];
   createRow: boolean;
   onExitCreateMode: () => void;
 }

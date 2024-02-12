@@ -16,7 +16,6 @@ import { defaultTableSettings } from "./tableSettings";
 import { intializePropertyColumns } from "../columns/propertyColumns";
 
 interface Props {
-  initialData: Property[];
   createRow: boolean;
   onExitCreateMode: () => void;
 }
@@ -99,7 +98,7 @@ const PropertiesTable = ({ createRow, onExitCreateMode }: Props) => {
       tenantId: newProperty.tenant?._id || undefined,
     };
     delete modifiedProperty.landlord;
-    delete modifiedProperty.tenant; 
+    delete modifiedProperty.tenant;
 
     // Send req to create property
     propertyService
@@ -108,8 +107,7 @@ const PropertiesTable = ({ createRow, onExitCreateMode }: Props) => {
         if (!savedProperty.landlord)
           savedProperty.landlord = { _id: "", llID: "" };
 
-        if (!savedProperty.tenant) 
-          savedProperty.tenant = { _id: "", tID: "" };
+        if (!savedProperty.tenant) savedProperty.tenant = { _id: "", tID: "" };
 
         setData([savedProperty, ...data]);
         // Update user
