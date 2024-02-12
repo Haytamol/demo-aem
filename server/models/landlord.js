@@ -1,5 +1,5 @@
 const Joi = require("joi");
-const mongoose = require("mongoose");
+//cont mongoose = require("mongoose");
 
 const landlordSchema = new mongoose.Schema({
   llID: { type: String, required: true, minlength: 1, maxlength: 20 },

@@ -1,6 +1,6 @@
 const Joi = require("joi");
 Joi.objectId = require("joi-objectid")(Joi);
-const mongoose = require("mongoose");
+//cont mongoose = require("mongoose");
 
 const tenantSchema = new mongoose.Schema({
   tID: { type: String, required: true, minlength: 1, maxlength: 20 },

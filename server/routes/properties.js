@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+//cont mongoose = require("mongoose");
 const express = require("express");
 const { Property, validate } = require("../models/property");
 const { Landlord } = require("../models/landlord");

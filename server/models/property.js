@@ -1,5 +1,5 @@
 const Joi = require("joi");
-const mongoose = require("mongoose");
+//cont mongoose = require("mongoose");
 
 const propertySchema = new mongoose.Schema({
   pID: { type: String, required: true, minlength: 1, maxlength: 20 },
