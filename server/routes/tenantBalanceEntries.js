@@ -1,4 +1,4 @@
-//cont mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const express = require("express");
 const { TenantBalanceEntry } = require("../models/tenantBalanceEntry");
 const router = express.Router();

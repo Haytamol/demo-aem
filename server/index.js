@@ -1,4 +1,4 @@
-////cont mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -12,10 +12,12 @@ const invoices = require("./routes/invoices");
 
 app.use(cors());
 
-// mongoose
-//   .connect("mongodb+srv://haytammostaine2002:WwZvM2ygRSHkcBxD@mymongodb.wljkdqz.mongodb.net/myMongoDb?retryWrites=true&w=majority")
-//   .then(() => console.log("Connected to MongoDB..."))
-//   .catch((err) => console.error("Could not connect to MongoDB...", err));
+mongoose
+  .connect(
+    "mongodb+srv://haytammostaine2002:WwZvM2ygRSHkcBxD@mymongodb.wljkdqz.mongodb.net/myMongoDb?retryWrites=true&w=majority"
+  )
+  .then(() => console.log("Connected to MongoDB..."))
+  .catch((err) => console.error("Could not connect to MongoDB...", err));
 
 app.use(express.json());
 

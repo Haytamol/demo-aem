@@ -1,4 +1,4 @@
-//cont mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const express = require("express");
 const { Invoice, validate } = require("../models/invoice");
 const { BankingEntry } = require("../models/bankingEntry");

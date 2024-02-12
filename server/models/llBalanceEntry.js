@@ -1,5 +1,5 @@
 const Joi = require("joi");
-//cont mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 const llBalanceEntrySchema = new mongoose.Schema({
   property: { type: mongoose.Schema.Types.ObjectId, ref: "Property" },

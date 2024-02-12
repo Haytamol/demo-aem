@@ -1,5 +1,5 @@
 const Joi = require("joi");
-//cont mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 const invoiceSchema = new mongoose.Schema({
   date: { type: Date, required: true },
