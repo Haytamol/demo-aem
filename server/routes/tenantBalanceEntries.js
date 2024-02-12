@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
 // Get balance enries by property
 router.get("/byProperty/:propertyId", async (req, res) => {
   const propertyId = req.params.propertyId;
-
+  console.log("Heyo baakas, propertyId", propertyId);
   try {
     const tenantEntriesForProperty = await TenantBalanceEntry.find({
       property: propertyId,
