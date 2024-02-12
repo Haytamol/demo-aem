@@ -41,7 +41,7 @@ export function defaultTableSettings<T extends MRT_RowData>({
     renderEmptyRowsFallback: () => (
       <Box
         display="flex"
-        justifyContent="center"
+        justifyContent="flex-start"
         alignItems="center"
         padding={5}
       >
