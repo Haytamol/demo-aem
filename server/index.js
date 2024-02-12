@@ -17,6 +17,11 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/", (req, res) => {
+  res.send("server is running...");
+});
+
 app.use("/api/properties", properties);
 app.use("/api/landlords", landlords);
 app.use("/api/tenants", tenants);
