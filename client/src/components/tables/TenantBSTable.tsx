@@ -10,15 +10,19 @@ import { defaultTableSettings } from "./tableSettings";
 
 interface Props {
   data: TenantBalanceEntry[];
+  propertyID: string; // to check if a property was selected
 }
 
-const TenantBSTable = ({ data }: Props) => {
+const TenantBSTable = ({ data, propertyID }: Props) => {
   const columns = useMemo<MRT_ColumnDef<TenantBalanceEntry>[]>(
     () => intializeTenantBalanceColumns(),
     []
   );
 
-  const defaultSettings = defaultTableSettings<TenantBalanceEntry>();
+  const defaultSettings = defaultTableSettings<TenantBalanceEntry>({
+    isBalanceSheet: true,
+    propertyID,
+  });
 
   const table = useMaterialReactTable({
     ...defaultSettings,

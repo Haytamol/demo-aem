@@ -10,15 +10,19 @@ import { intializeLLBalanceColumns } from "../columns/llBalanceColumns";
 
 interface Props {
   data: LLBalanceEntry[];
+  propertyID: string;
 }
 
-const LandlordBSTable = ({ data }: Props) => {
+const LandlordBSTable = ({ data, propertyID }: Props) => {
   const columns = useMemo<MRT_ColumnDef<LLBalanceEntry>[]>(
     () => intializeLLBalanceColumns(),
     []
   );
 
-  const defaultSettings = defaultTableSettings<LLBalanceEntry>();
+  const defaultSettings = defaultTableSettings<LLBalanceEntry>({
+    isBalanceSheet: true,
+    propertyID,
+  });
 
   const table = useMaterialReactTable({
     ...defaultSettings,

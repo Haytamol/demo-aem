@@ -194,7 +194,7 @@ const LLBalanceSheet = () => {
           </FormControl>
         </Box>
       </Box>
-      <LandlordBSTable data={filteredData} />
+      <LandlordBSTable data={filteredData} propertyID={selectedProperty._id} />
     </Box>
   );
 };

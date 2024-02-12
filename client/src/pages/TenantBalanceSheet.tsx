@@ -188,7 +188,7 @@ const tenantBalanceSheet = () => {
           </FormControl>
         </Box>
       </Box>
-      <TenantBSTable data={filteredData} />
+      <TenantBSTable data={filteredData} propertyID={selectedProperty._id} />
     </Box>
   );
 };
