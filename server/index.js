@@ -10,12 +10,15 @@ const llBalanceEntries = require("./routes/llBalanceEntries");
 const tenantBalanceEntries = require("./routes/tenantBalanceEntries");
 const invoices = require("./routes/invoices");
 
+require("dotenv").config();
+
+app.use(cors());
+
 mongoose
-  .connect("mongodb://localhost/pp-playground")
+  .connect(process.env.MONGODB_CONNECT_URI)
   .then(() => console.log("Connected to MongoDB..."))
   .catch((err) => console.error("Could not connect to MongoDB..."));
 
-app.use(cors());
 app.use(express.json());
 
 app.use("/", (req, res) => {
